@@ -1,3 +1,5 @@
+import gc
+
 class Node:
     def __init__(self, name):
         self.name = name
@@ -13,12 +15,11 @@ node2 = Node('B')
 node3 = Node('C')
 node4 = Node('D')
 
-node1.ref = node2
-node2.ref = node1
+# node1.ref = node2
+# node2.ref = node1
 
 
 del node1 #? this wont delete if both node1 and node2 to are ref
-
-
+# del node2
 print('End of program')
 

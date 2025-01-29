@@ -1,0 +1,40 @@
+{% extends "style1.html" %}
+
+{% block content %}
+<h1>Customer</h1>
+<hr>
+<h2>Customer List</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in customers %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>Add New Customer</h1>
+<hr>
+<form method="post" action="/addCustomer">
+    <div>
+        <label for="name">Name:</label>
+        <input placeholder="Name" id="name" name="name" required/>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input placeholder="Email" id="email" name="email" required/>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
